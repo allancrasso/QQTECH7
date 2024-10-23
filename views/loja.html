@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Caminho corrigido para o CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Oferte e Ganhe - Cadastro de Loja</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Sistema "Oferte e Ganhe"</h1>
+
+        <h2>Cadastro de Loja</h2>
+        <form action="/loja/add" method="POST">
+            <label for="nome">Nome da Loja:</label>
+            <input type="text" id="nome" name="nome" required>
+            <button type="submit">Cadastrar Loja</button>
+        </form>
+
+        <h2>Lojas Cadastradas</h2>
+        <ul id="lista-lojas">
+            <!-- As lojas serão carregadas aqui via JavaScript -->
+        </ul>
+    </div>
+
+    <!-- Caminho corrigido para o JavaScript -->
+    <script src="/js/loja.js"></script>
+</body>
+</html>

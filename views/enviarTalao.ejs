@@ -1,0 +1,29 @@
+<h2>Controle de Estoque</h2>
+<table border="1">
+    <thead>
+        <tr>
+            <th>Loja</th>
+            <th>Estoque Atual</th>
+            <th>Quantidade Recomendada</th>
+            <th>Quantidade Mínima</th>
+            <th>Alerta</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% estoque.forEach(e => { %>  <!-- Aqui 'estoque' foi passado corretamente -->
+            <tr>
+                <td><%= e.nome %></td>
+                <td><%= e.estoqueAtual %></td>
+                <td><%= e.quantidadeRecomendada %></td>
+                <td><%= e.quantidadeMinima %></td>
+                <td>
+                    <% if (e.estoqueAtual < e.quantidadeMinima) { %>
+                        <span style="color:red;">Estoque Baixo!</span>
+                    <% } else { %>
+                        <span>OK</span>
+                    <% } %>
+                </td>
+            </tr>
+        <% }) %>
+    </tbody>
+</table>

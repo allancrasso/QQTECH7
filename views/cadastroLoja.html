@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Loja</title>
+</head>
+<body>
+    <h1>Cadastro de Loja</h1>
+
+    <!-- Formulário de Cadastro de Loja -->
+    <form action="/loja/add" method="POST">
+        <label for="nome">Nome da Loja:</label>
+        <input type="text" id="nome" name="nome" required><br><br>
+
+        <button type="submit">Cadastrar Loja</button>
+    </form>
+
+    <!-- Lista de Lojas -->
+    <h2>Lojas Cadastradas</h2>
+    <ul id="lista-lojas">
+        <!-- A lista de lojas será carregada via JavaScript -->
+    </ul>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            fetch('/loja/api/lojas')
+                .then(response => response.json())
+                .then(lojas => {
+                    const listaLojas = document.getElementById('lista-lojas');
+                    listaLojas.innerHTML = '';
+
+                    lojas.forEach(loja => {
+                        const li = document.createElement('li');
+                        li.textContent = loja.nome;
+                        listaLojas.appendChild(li);
+                    });
+                });
+        });
+    </script>
+</body>
+</html>

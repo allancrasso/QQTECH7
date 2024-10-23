@@ -1,0 +1,29 @@
+<h2>Relatório de Gestão de Estoque</h2>
+<table border="1">
+    <thead>
+        <tr>
+            <th>Loja</th>
+            <th>Estoque Atual</th>
+            <th>Quantidade Recomendada</th>
+            <th>Quantidade Mínima</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% estoque.forEach(item => { %>
+            <tr>
+                <td><%= item.nome %></td>
+                <td><%= item.estoqueAtual %></td>
+                <td><%= item.quantidadeRecomendada %></td>
+                <td><%= item.quantidadeMinima %></td>
+                <td>
+                    <% if (item.estoqueAtual < item.quantidadeMinima) { %>
+                        <span style="color:red;">Estoque Baixo!</span>
+                    <% } else { %>
+                        <span>OK</span>
+                    <% } %>
+                </td>
+            </tr>
+        <% }) %>
+    </tbody>
+</table>

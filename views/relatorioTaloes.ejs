@@ -1,0 +1,21 @@
+<h2>Relatório de Manutenção de Talões</h2>
+<table border="1">
+    <thead>
+        <tr>
+            <th>Loja</th>
+            <th>Quantidade Enviada</th>
+            <th>Data de Envio</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% taloes.forEach(talao => { %>
+            <tr>
+                <td><%= talao.loja %></td>
+                <td><%= talao.quantidade %></td>
+                <td><%= talao.dataEnvio %></td>
+                <td><%= talao.status %></td>
+            </tr>
+        <% }) %>
+    </tbody>
+</table>

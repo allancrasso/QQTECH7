@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela Inicial - Sistema Oferte e Ganhe</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .dashboard {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 30px;
+        }
+
+        .card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 200px;
+            margin: 10px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card a {
+            text-decoration: none;
+            color: #333;
+            font-size: 18px;
+        }
+
+        .card h2 {
+            font-size: 20px;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            font-size: 16px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bem-vindo ao Sistema "Oferte e Ganhe"</h1>
+
+    <div class="dashboard">
+        <div class="card">
+            <h2>Usuários</h2>
+            <p>Gerencie os usuários cadastrados</p>
+            <a href="/usuario/cadastro">Acessar Usuários</a>
+        </div>
+
+        <div class="card">
+            <h2>Perfis</h2>
+            <p>Gerencie os perfis de acesso</p>
+            <a href="/perfil/cadastro">Acessar Perfis</a>
+        </div>
+
+        <div class="card">
+            <h2>Associações</h2>
+            <p>Associe usuários e perfis</p>
+            <a href="/associacao">Acessar Associações</a>
+        </div>
+
+        <div class="card">
+            <h2>Lojas</h2>
+            <p>Gerencie as lojas cadastradas</p>
+            <a href="/loja/cadastro">Acessar Lojas</a>
+        </div>
+        <div class="card">
+            <h2>Envio de Talões</h2>
+            <p>Gerencie o envio de talões para as lojas</p>
+            <a href="/talao">Acessar Envio de Talões</a>
+        </div>
+        <div class="card">
+            <h2>Relatórios</h2>
+            <p>Acesse os relatórios de usuários, perfis, talões e estoque.</p>
+            <a href="/relatorios">Acessar Relatórios</a>
+        </div>
+
+        <div class="card">
+            <h2>Dashboard</h2>
+            <p>Veja o resumo do sistema</p>
+            <a href="/dashboard">Acessar Dashboard</a>
+        </div>
+    </div>
+</body>
+</html>

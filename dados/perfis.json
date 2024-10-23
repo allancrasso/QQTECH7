@@ -1,0 +1,6 @@
+[
+    { "id": 1, "nome": "Administrador" },
+    { "id": 2, "nome": "Gerente" },
+    { "id": 3, "nome": "Funcionário" }
+  ]
+  

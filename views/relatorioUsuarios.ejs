@@ -1,0 +1,17 @@
+<h2>Relatório de Usuários Cadastrados</h2>
+<table border="1">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>E-mail</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% usuarios.forEach(usuario => { %>
+            <tr>
+                <td><%= usuario.nome %></td>
+                <td><%= usuario.email %></td>
+            </tr>
+        <% }) %>
+    </tbody>
+</table>

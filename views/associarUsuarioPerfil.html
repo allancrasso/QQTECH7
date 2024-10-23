@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Associar Usuário e Perfil</title>
+</head>
+<body>
+    <h1>Associar Usuário e Perfil</h1>
+
+    <!-- Formulário de Associação de Usuário e Perfil -->
+    <form action="/associacao/add" method="POST">
+        <label for="usuarioId">Usuário:</label>
+        <select id="usuarioId" name="usuarioId" required>
+            <% usuarios.forEach(usuario => { %>
+                <option value="<%= usuario.id %>"><%= usuario.nome %></option>
+            <% }) %>
+        </select><br><br>
+
+        <label for="perfilId">Perfil:</label>
+        <select id="perfilId" name="perfilId" required>
+            <% perfis.forEach(perfil => { %>
+                <option value="<%= perfil.id %>"><%= perfil.nome %></option>
+            <% }) %>
+        </select><br><br>
+
+        <button type="submit">Associar</button>
+    </form>
+
+    <!-- Lista de Associações em Tabela -->
+    <h2>Associações</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Usuário</th>
+                <th>Perfil</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody id="lista-associacoes">
+            <!-- A lista de associações será carregada via JavaScript -->
+        </tbody>
+    </table>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            fetch('/associacao/api/associacoes')
+                .then(response => response.json())
+                .then(associacoes => {
+                    const listaAssociacoes = document.getElementById('lista-associacoes');
+                    listaAssociacoes.innerHTML = '';
+
+                    associacoes.forEach(associacao => {
+                        const tr = document.createElement('tr');
+                        tr.innerHTML = `
+                            <td>${associacao.usuario}</td>
+                            <td>${associacao.perfil}</td>
+                            <td>
+                                <a href="/associacao/editar/${associacao.id}">Editar</a>
+                            </td>
+                        `;
+                        listaAssociacoes.appendChild(tr);
+                    });
+                });
+        });
+    </script>
+</body>
+</html>

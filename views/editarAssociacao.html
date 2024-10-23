@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Associar Usuário e Perfil</title>
+</head>
+<body>
+    <h1>Associar Usuário e Perfil</h1>
+
+    <!-- Formulário de Associação de Usuário e Perfil -->
+    <form action="/associacao/add" method="POST">
+        <label for="usuarioId">Usuário:</label>
+        <select id="usuarioId" name="usuarioId" required>
+            <!-- Os usuários serão carregados dinamicamente no servidor -->
+        </select><br><br>
+
+        <label for="perfilId">Perfil:</label>
+        <select id="perfilId" name="perfilId" required>
+            <!-- Os perfis serão carregados dinamicamente no servidor -->
+        </select><br><br>
+
+        <button type="submit">Associar</button>
+    </form>
+
+    <!-- Lista de Associações -->
+    <h2>Associações</h2>
+    <ul id="lista-associacoes">
+        <!-- A lista de associações será carregada via JavaScript -->
+    </ul>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            fetch('/associacao/api/associacoes')
+                .then(response => response.json())
+                .then(associacoes => {
+                    const listaAssociacoes = document.getElementById('lista-associacoes');
+                    listaAssociacoes.innerHTML = '';
+
+                    associacoes.forEach(associacao => {
+                        const li = document.createElement('li');
+                        li.textContent = `${associacao.usuario} - ${associacao.perfil}`;
+                        listaAssociacoes.appendChild(li);
+                    });
+                });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<h2>Relatório de Perfis de Usuários</h2>
+<table border="1">
+    <thead>
+        <tr>
+            <th>Perfil</th>
+            <th>Descrição</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% perfis.forEach(perfil => { %>
+            <tr>
+                <td><%= perfil.nome %></td>
+                <td><%= perfil.descricao %></td>
+            </tr>
+        <% }) %>
+    </tbody>
+</table>

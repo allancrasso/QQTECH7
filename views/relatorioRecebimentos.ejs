@@ -1,0 +1,21 @@
+<h2>Relatório de Recebimento de Talões</h2>
+<table border="1">
+    <thead>
+        <tr>
+            <th>Loja</th>
+            <th>Quantidade Recebida</th>
+            <th>Data de Recebimento</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% recebimentos.forEach(recebimento => { %>
+            <tr>
+                <td><%= recebimento.loja %></td>
+                <td><%= recebimento.quantidade %></td>
+                <td><%= recebimento.dataRecebimento %></td>
+                <td><%= recebimento.status %></td>
+            </tr>
+        <% }) %>
+    </tbody>
+</table>

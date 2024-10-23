@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Administrativo</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <h1>Dashboard Administrativo</h1>
+
+    <div class="dashboard">
+        <div class="card">
+            <h2>Total de Usuários</h2>
+            <p><%= totalUsuarios %></p>
+        </div>
+
+        <div class="card">
+            <h2>Total de Perfis</h2>
+            <p><%= totalPerfis %></p>
+        </div>
+
+        <div class="card">
+            <h2>Total de Associações</h2>
+            <p><%= totalAssociacoes %></p>
+        </div>
+    </div>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .dashboard {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 30px;
+        }
+
+        .card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 200px;
+            text-align: center;
+        }
+
+        .card h2 {
+            font-size: 20px;
+            color: #555;
+        }
+
+        .card p {
+            font-size: 24px;
+            color: #111;
+        }
+    </style>
+</body>
+</html>

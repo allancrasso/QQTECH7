@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Perfil</title>
+</head>
+<body>
+    <h1>Cadastro de Perfil</h1>
+
+    <!-- Formulário de Cadastro de Perfil -->
+    <form action="/perfil/add" method="POST">
+        <label for="nome">Nome do Perfil:</label>
+        <input type="text" id="nome" name="nome" required><br><br>
+
+        <button type="submit">Cadastrar Perfil</button>
+    </form>
+
+    <!-- Lista de Perfis -->
+    <h2>Perfis Cadastrados</h2>
+    <ul id="lista-perfis">
+        <!-- A lista de perfis será carregada via JavaScript -->
+    </ul>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            fetch('/perfil/api/perfis')
+                .then(response => response.json())
+                .then(perfis => {
+                    const listaPerfis = document.getElementById('lista-perfis');
+                    listaPerfis.innerHTML = '';
+
+                    perfis.forEach(perfil => {
+                        const li = document.createElement('li');
+                        li.textContent = perfil.nome;
+                        listaPerfis.appendChild(li);
+                    });
+                });
+        });
+    </script>
+</body>
+</html>
